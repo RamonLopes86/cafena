@@ -1,0 +1,126 @@
+.boxPai{
+
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding:  10px;
+    
+}
+   
+    
+
+.boxPai h1 {
+
+    padding: 40px 0px;
+    font-size: 2.6rem;
+}
+    
+
+
+.boxPai span{
+
+    color: var(--corRamon);
+}
+
+.boxPai .boxMaior{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0px auto;
+    background-color:#13131A;
+    
+    
+}
+    
+    
+    
+.ImgCafe{
+
+    width: 100%;
+    flex: auto;
+ 
+}
+
+
+
+.boxMaior .boxTexto{
+
+    width: 60%;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    flex: auto;
+    
+    
+}
+
+.boxMaior .boxTexto h3 {
+
+    font-size: 2.2rem;
+   
+}
+
+.boxMaior .boxTexto p{
+
+    line-height: 30px;
+    font-size: 22px;
+}
+
+.boxMaior .boxTexto button{
+
+    width: 150px;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--corRamon);
+    border: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1101px) {
+
+    .boxMaior{
+
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .boxMaior .ImgCafe{
+
+        flex: auto;
+    }
+
+   .boxMaior .boxTexto{
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+       
+    }
+
+    .boxMaior .boxTexto p {
+
+        text-align: justify;
+    }
+   
+
+}
+
+
+
+
+
+
+
+
+    
+

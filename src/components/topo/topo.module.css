@@ -1,0 +1,200 @@
+
+
+
+.boxPai{
+
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 50px;
+    border-bottom: 1px solid white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  
+    
+}
+
+.boxPai .boxNav .Nav ul{
+
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    
+    /* flex-wrap: wrap;
+    text-align: center;
+    justify-content: center; */
+}
+   
+
+
+.boxPai .boxNav .Nav li{
+
+   
+    padding: 1px 0px;
+    text-align: center;
+}
+
+.boxPai .boxNav .Nav li:hover{
+
+    color: #D3AD7F;
+    transform: scale(1.3);
+    transition: all 300ms;
+    border-bottom: 1px solid #D3AD7F;
+  
+}
+    
+    
+
+
+  
+
+
+.boxImage{
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.boxImage .Icon{
+
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 500ms;
+}
+
+.boxImage .Icon:hover{
+
+    transition: all 500ms;
+    background-color: #D3AD7F;
+    animation-name: mover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+.NavEscondida{
+
+    display: none;
+}
+
+
+@media screen and (max-width: 870px) {
+
+    .boxPai .boxNav .Nav ul{
+
+            display: none;
+
+
+    }
+
+    .NavEscondida{
+
+        display: block;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+    }
+
+
+    .boxPai{
+
+        border-bottom: none;
+        justify-content: space-between;
+    }
+
+
+}
+
+
+@media screen and (max-width:410px) {
+
+    .NavEscondida nav ul{
+
+        flex-wrap: wrap;
+    }
+
+}
+
+.NavEscondida{
+
+    margin-top: 100px;
+    background-color: black;
+    color:white;
+    padding-top: 20px;
+}
+
+.NavEscondida ul {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 4%;
+
+
+}
+
+.NavEscondida ul li {
+
+    list-style: none;
+    background-color: white;
+    color: black;
+    width: 180px;
+    padding: 5px;
+    outline: 2px solid transparent;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.NavEscondida ul li:hover {
+
+    background-color: transparent;
+    color: white;
+    outline: 2px solid white;
+    transition: all 500ms;
+}
+
+
+    
+
+@keyframes mover {
+
+    20%{
+
+        transform:scale(1.1);
+        transition: all 500ms;
+    }
+    80%{
+
+        transform:scale(1);
+        transition: all 500ms;
+    }
+
+    
+}
+
+
+   
+
+
+
+
+

@@ -1,0 +1,62 @@
+.Moldura{
+
+    width: 310px;
+    border: 1px solid rgba(255, 255, 255, 0.466);
+    min-height: 350px;
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Moldura .boxFilho{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 200px;
+    gap: 20px;
+    padding: 40px;
+    cursor: pointer;
+
+}
+
+.Moldura .boxFilho .imgCard{
+
+    width: 100px;
+    height: fit-content;
+    
+
+}
+
+.Moldura .boxFilho h4{
+
+    font-size: 1.3rem;
+}
+
+.Moldura .boxFilho p{
+
+    font-size: 1.5rem;
+
+}
+
+.Moldura .boxFilho p sub{
+
+    font-size: 1rem;
+    text-decoration: line-through;
+
+}
+
+.Moldura .boxFilho button{
+
+    cursor: pointer;
+    width: 200px;
+    padding:15px;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--corRamon);
+    color:white;
+    
+}

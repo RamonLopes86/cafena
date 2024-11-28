@@ -1,0 +1,38 @@
+.boxMaior{
+
+    background-color: black;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    
+}
+  
+    
+
+
+.boxMaior h1{
+
+    font-size: 2.4rem;
+    padding: 40px 10px;
+}
+
+.boxMaior span{
+
+    color: var(--corRamon);
+
+}
+
+.boxCard{
+
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 10px;
+
+}
+
+

@@ -1,11 +1,128 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Topo from "@/components/topo/topo";
+import React, {useState , useRef, useEffect} from "react";
+import { nav } from "@/components/nav/nav";
+import { array } from "@/components/nav/objCard";
+import SectionCafe from "@/components/SectionCafe/sectionCafe";
+import SobreNos from "@/components/sectionSobreNos/sobreNos";
+import Menu from "@/components/Menu/menu";
+import Clientes from "@/components/sectionClientes/clientes";
+import Endereco from "@/components/SecrionEndereço/endereco";
+import Rodape from "@/components/SectionRodape/Rodape";
+import Modal from "@/components/modal/modal";
 
-const inter = Inter({ subsets: ["latin"] });
+
+
+
+
+
 
 export default function Home() {
+
+  const [menu , setMenu]= useState(nav)
+  const [card , setCard] = useState(array)
+  const [modal , setModal] = useState(false)
+  const [txInput , setTxInput] = useState('')
+  const [retorno , setRetorno] = useState(styles.Desaparecer)
+
+
+  const [nCard , setNovoCard] = useState(array)
+
+  
+
+
+ 
+
+  const modalRef = useRef()
+
+  
+
+  function MostrarModal(){
+
+    setModal(!modal)
+    setTxInput('')
+    setCard(array)
+
+    
+    
+  }
+    
+
+
+   
+
+  function ClickOut(evento){
+
+
+    if(modalRef.current && !modalRef.current.contains(evento.target)){
+
+        setModal(!modal)
+
+
+        if(card.length == 0){
+
+          setCard(array)
+         
+        }
+          
+    }
+        
+
+  }
+
+
+  useEffect(()=>{
+
+    if(card.length === 0){
+
+      setRetorno(styles.Msg)
+
+    }else{
+
+        setRetorno(styles.Desaparecer)
+    }
+
+
+  }, [card])
+    
+
+
+  function PesquisarMenu(txDigitado){
+
+    const filtro = array.filter((array)=>
+    
+        array.titulo.toLowerCase().includes(txDigitado.toLowerCase())
+    
+    )
+  
+    
+    let txFiltrado =  setCard(filtro)
+
+    setTxInput(txFiltrado)
+
+  }
+    
+    
+  function ChangeInput(evento){
+
+    PesquisarMenu(evento.target.value)
+    
+
+  }
+  
+
+  // function clickMenu(){
+
+  //     const teste = nav.filter((nav)=> nav === nav)
+
+  //     console.log(teste)
+
+  // }
+     
+
+    
+
   return (
     <>
       <Head>
@@ -14,101 +131,79 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
+     
+
+      
+
+        <header>
+          <Topo
+        
+          naveg ={menu}
+          clickModal={MostrarModal}
+          clickOut={ClickOut}
+          // clickMenu={clickMenu}
+         
           />
-        </div>
+        
+        </header>
+        
+        
+        <main className={`${styles.Main}`} onClick={ClickOut} >
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        <Modal
+        
+        statusModal={modal}
+        clickModal={MostrarModal}
+        referencia={modalRef}
+        clickOut={ClickOut}
+        txInput={txInput}
+        change={ChangeInput}
+        pesquisa={PesquisarMenu}
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+        card={card}
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
+        
+        />
+        
+        
+      
+         
+        
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+        <SectionCafe/>
+        
+        
+        <SobreNos/>
+
+
+        <Menu
+
+          card={card}
+          statusModal={modal}
+          status={retorno}
+        />
+    
+            
+        <Clientes/>
+
+        <Endereco/>
+
+            
+
+        </main>
+          
+        
+        <footer>
+
+            <Rodape/>
+
+        </footer>
+        
+        
+        
+        
+     
     </>
   );
 }

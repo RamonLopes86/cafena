@@ -1,0 +1,81 @@
+.boxImgFundo{
+
+    background-image: url(../../../public/home-img.jpg);
+    min-height: 800px;
+    background-position:top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+
+.boxImgFundo .Texto{
+
+    max-width: 600px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+
+}
+
+.boxImgFundo .Texto h1 {
+
+    font-size: 3rem;
+    
+    
+}
+
+.boxImgFundo .Texto p{
+
+    font-size: 1.5rem;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 0.692);
+
+}
+
+.boxImgFundo .Texto button {
+
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: #eb9a37;
+    border: none;
+    color: white;
+    cursor: pointer;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    
+}
+
+
+
+
+@keyframes move {
+
+    20% {
+
+        
+        transform: translateY(4px);
+    }
+
+    80%{
+
+       transform: translateY(-4px);
+    }
+
+    
+}
+
+
+
+
+
+
+

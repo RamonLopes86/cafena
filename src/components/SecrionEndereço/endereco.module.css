@@ -1,0 +1,30 @@
+.boxPai{
+
+    background-color: black;
+    text-align: center;
+    padding: 40px 10px;
+    min-height: 400px;
+
+}
+
+
+.boxPai .boxIframe{
+
+    max-width: 600px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+    
+
+.Mapa{
+
+    width: 100%;
+    min-height: 500px;
+
+}

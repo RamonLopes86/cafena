@@ -1,0 +1,53 @@
+.boxRodape{
+
+    background-color: black;
+    text-align: center;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+   gap: 10px;
+
+}
+
+.boxRodape .Img {
+
+    width: 60px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 100%;
+    transition: all 500ms;
+    cursor: pointer;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+   
+}
+
+.boxRodape .Img:hover{
+
+    background-color: var(--corRamon);
+    transition: all 500ms;
+    animation: none;
+}
+
+
+
+@keyframes move {
+
+    40%{
+
+        transform: scale(0.8);
+    }
+    90%{
+
+        transform: scale(1);
+    }
+    
+}
+
+
+
+    
